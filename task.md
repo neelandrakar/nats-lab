@@ -1,0 +1,4 @@
+- [x] Modify `ContactMessage.js` model to add `userId`
+- [x] Create API route: `api/contact/route.js`
+- [x] Implement inline enquiry form state and layout on home `page.js`
+- [x] Verify the build compiles and runs
