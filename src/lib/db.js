@@ -24,11 +24,13 @@ async function dbConnect() {
     );
   }
 
+  console.log(`MONGO_URI=> `, MONGODB_URI)
+
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
-      serverSelectionTimeoutMS: 15000, // Fail fast in 1.5s instead of blocking for 30s
-      connectTimeoutMS: 15000,
+      serverSelectionTimeoutMS: 1500, // Fail fast in 1.5s instead of blocking for 30s
+      connectTimeoutMS: 1500,
     };
 
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongooseInstance) => {
