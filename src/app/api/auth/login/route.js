@@ -13,7 +13,7 @@ export async function POST(req) {
   try {
     await dbConnect();
     const body = await req.json();
-    
+
     // Validate inputs
     const result = loginSchema.safeParse(body);
     if (!result.success) {
@@ -22,10 +22,10 @@ export async function POST(req) {
         { status: 400 }
       );
     }
-    
+
     const { email, password } = result.data;
     const normalizedEmail = email.toLowerCase().trim();
-    
+
     // Find user
     const user = await User.findOne({ email: normalizedEmail });
     if (!user) {
@@ -34,7 +34,7 @@ export async function POST(req) {
         { status: 400 }
       );
     }
-    
+
     // Compare password
     const isMatch = await comparePassword(password, user.passwordHash);
     if (!isMatch) {
@@ -43,7 +43,7 @@ export async function POST(req) {
         { status: 400 }
       );
     }
-    
+
     // Generate token and session cookie
     const tokenPayload = {
       id: user._id.toString(),
@@ -52,7 +52,7 @@ export async function POST(req) {
       role: user.role
     };
     const token = signToken(tokenPayload);
-    
+
     const response = NextResponse.json({
       success: true,
       message: "Login successful",
@@ -63,7 +63,7 @@ export async function POST(req) {
         role: user.role
       }
     });
-    
+
     response.cookies.set({
       name: "session",
       value: token,
@@ -73,7 +73,7 @@ export async function POST(req) {
       maxAge: 7 * 24 * 60 * 60, // 7 days
       path: "/"
     });
-    
+
     return response;
   } catch (error) {
     console.error("Login error:", error);
