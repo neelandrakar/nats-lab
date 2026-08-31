@@ -4,7 +4,7 @@ export const siteConfig = {
   supportingMessage: "We build digital systems that help businesses capture more leads, automate repetitive work and operate more efficiently.",
   description: "NATS Lab is a premium software and AI automation studio. We build high-end websites, custom software, and AI-powered automation to solve critical business problems.",
   url: "https://natslab.com",
-  
+
   founder: {
     name: "Neelandra Kar",
     role: "Founder & Software Engineer",
@@ -24,8 +24,8 @@ export const siteConfig = {
 
   contact: {
     email: "contact@natslab.com",
-    phone: "+91 98765 43210",
-    whatsapp: "+91 98765 43210",
+    phone: "+91 8100106427",
+    whatsapp: "+91 8100106427",
     whatsappMsg: "Hi NATS Lab, I'd like to discuss a project.",
     address: "Kolkata, India",
     socials: {
