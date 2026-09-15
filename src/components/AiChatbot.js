@@ -14,7 +14,7 @@ export default function AiChatbot() {
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const messagesEndRef = useRef(null);
 
   const suggestOptions = [
@@ -29,7 +29,17 @@ export default function AiChatbot() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const [sessionId, setSessionId] = useState("");
+
   useEffect(() => {
+    // Generate or retrieve a unique session ID for this user
+    let storedSessionId = localStorage.getItem("chat_session_id");
+    if (!storedSessionId) {
+      storedSessionId = "session_" + Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
+      localStorage.setItem("chat_session_id", storedSessionId);
+    }
+    setSessionId(storedSessionId);
+
     if (isOpen) {
       scrollToBottom();
     }
@@ -37,10 +47,10 @@ export default function AiChatbot() {
 
   const handleSendMessage = async (text) => {
     if (!text || text.trim() === "" || isLoading) return;
-    
+
     const userMessage = { role: "user", content: text };
     const updatedMessages = [...messages, userMessage];
-    
+
     setMessages(updatedMessages);
     setInputValue("");
     setIsLoading(true);
@@ -49,23 +59,26 @@ export default function AiChatbot() {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: updatedMessages }),
+        credentials: "same-origin",
+        // Send sessionId along with the latest user message
+        body: JSON.stringify({ sessionId, messages: updatedMessages }),
       });
       const data = await response.json();
-      
+
       if (data.success && data.message) {
         setMessages((prev) => [...prev, data.message]);
       } else {
+        console.error("Chat API returned an error:", data.error || "Unknown error");
         setMessages((prev) => [
           ...prev,
           {
             role: "assistant",
-            content: "Sorry, I encountered an error connecting to our core AI engine. Please try again or head over to the contact page to start your project directly.",
+            content: `Error: ${data.error || "I encountered an issue connecting to the AI engine."} Please make sure you have added the GROQ_API_KEY to your environment and restarted the server.`,
           },
         ]);
       }
     } catch (error) {
-      console.error("Chat error:", error);
+      console.error("Chat fetch error:", error);
       setMessages((prev) => [
         ...prev,
         {
@@ -82,9 +95,9 @@ export default function AiChatbot() {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       {/* Chat Window */}
       {isOpen && (
-        <div className="w-[360px] sm:w-[400px] h-[500px] bg-brand-surface border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden mb-4 transition-all duration-300">
+        <div className="w-[380px] sm:w-[420px] h-[550px] bg-brand-surface border border-white/20 rounded-2xl shadow-2xl flex flex-col overflow-hidden mb-4 transition-all duration-300">
           {/* Header */}
-          <div className="p-4 bg-gradient-to-r from-brand-teal/80 to-brand-cyan/80 backdrop-blur border-b border-white/5 flex items-center justify-between">
+          <div className="p-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
                 <Bot className="w-4 h-4 text-white" />
@@ -110,9 +123,8 @@ export default function AiChatbot() {
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`flex gap-3 max-w-[85%] ${
-                  msg.role === "user" ? "ml-auto flex-row-reverse" : ""
-                }`}
+                className={`flex gap-3 max-w-[85%] ${msg.role === "user" ? "ml-auto flex-row-reverse" : ""
+                  }`}
               >
                 {msg.role === "assistant" && (
                   <div className="w-7 h-7 rounded-full bg-brand-accent/20 border border-brand-accent/30 flex items-center justify-center shrink-0">
@@ -121,11 +133,10 @@ export default function AiChatbot() {
                 )}
                 <div>
                   <div
-                    className={`p-3 rounded-2xl text-sm leading-relaxed ${
-                      msg.role === "user"
-                        ? "bg-brand-accent text-white rounded-tr-none"
-                        : "bg-white/5 border border-white/10 text-gray-200 rounded-tl-none"
-                    }`}
+                    className={`p-3 rounded-2xl text-sm leading-relaxed ${msg.role === "user"
+                        ? "bg-brand-accent text-white rounded-tr-none shadow-sm"
+                        : "bg-white border border-gray-200 text-gray-800 rounded-tl-none shadow-sm"
+                      }`}
                   >
                     {msg.content}
                   </div>
@@ -137,7 +148,7 @@ export default function AiChatbot() {
                 <div className="w-7 h-7 rounded-full bg-brand-accent/20 border border-brand-accent/30 flex items-center justify-center shrink-0">
                   <Bot className="w-3.5 h-3.5 text-brand-accent" />
                 </div>
-                <div className="p-3 bg-white/5 border border-white/10 rounded-2xl rounded-tl-none flex items-center gap-1.5">
+                <div className="p-3 bg-white border border-gray-200 shadow-sm rounded-2xl rounded-tl-none flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-brand-accent animate-bounce" style={{ animationDelay: "0ms" }}></span>
                   <span className="w-2 h-2 rounded-full bg-brand-accent animate-bounce" style={{ animationDelay: "150ms" }}></span>
                   <span className="w-2 h-2 rounded-full bg-brand-accent animate-bounce" style={{ animationDelay: "300ms" }}></span>
@@ -154,7 +165,7 @@ export default function AiChatbot() {
                 <button
                   key={opt}
                   onClick={() => handleSendMessage(opt)}
-                  className="text-xs px-2.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-brand-accent/15 hover:border-brand-accent/30 transition-all"
+                  className="text-xs px-2.5 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:text-brand-accent hover:bg-brand-accent/5 hover:border-brand-accent/30 transition-all shadow-sm"
                 >
                   {opt}
                 </button>
@@ -163,7 +174,7 @@ export default function AiChatbot() {
           )}
 
           {/* Footer Action to lead page */}
-          <div className="px-4 py-2 bg-brand-dark/60 border-t border-white/5 flex items-center justify-between text-xs text-gray-400">
+          <div className="px-4 py-2 bg-white/50 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
             <span>Ready to start?</span>
             <Link
               href="/contact"
@@ -180,14 +191,14 @@ export default function AiChatbot() {
               e.preventDefault();
               handleSendMessage(inputValue);
             }}
-            className="p-3 border-t border-white/10 bg-brand-surface flex gap-2"
+            className="p-3 border-t border-gray-100 bg-brand-surface flex gap-2"
           >
             <input
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Type your message..."
-              className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 text-sm text-white focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/20"
+              className="flex-1 bg-white border border-gray-200 rounded-xl px-4 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/20"
             />
             <button
               type="submit"
@@ -203,7 +214,7 @@ export default function AiChatbot() {
       {/* Floating Action Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-teal to-brand-cyan hover:from-brand-teal hover:to-brand-teal text-white flex items-center justify-center shadow-xl hover:scale-105 transition-transform duration-200 z-50 relative group"
+        className="w-14 h-14 rounded-full bg-gradient-to-tr from-indigo-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 text-white flex items-center justify-center shadow-xl hover:scale-105 transition-transform duration-200 z-50 relative group"
       >
         {isOpen ? (
           <X className="w-6 h-6" />
