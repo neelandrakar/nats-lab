@@ -35,9 +35,9 @@ export const metadata = {
     follow: true,
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    icon: '/natslab_tab.png',
+    shortcut: '/natslab_tab.png',
+    apple: '/natslab_tab.png',
   }
 };
 
