@@ -58,6 +58,9 @@ export default function Navbar() {
           
           {user ? (
             <>
+              <span className="text-[#171717] font-bold border-r border-[#deddd6] pr-4 mr-1">
+                Hi, {user.name.split(' ')[0]}
+              </span>
               {user.role === "ADMIN" ? (
                 <Link href="/admin">Admin</Link>
               ) : (
@@ -95,6 +98,11 @@ export default function Navbar() {
       {isOpen && (
         <div className="md-mobile-menu border-t border-[#deddd6] bg-[#f7f6f2] px-[18px] py-4 space-y-4">
           <div className="flex flex-col gap-3 font-medium text-sm text-[#6d6d68]">
+            {user && (
+              <div className="text-[#171717] font-bold pb-2 border-b border-[#deddd6] mb-1">
+                Hi, {user.name}
+              </div>
+            )}
             <Link href={getHref("#services")} onClick={() => setIsOpen(false)} className="hover:text-[#171717] py-1">
               Services
             </Link>

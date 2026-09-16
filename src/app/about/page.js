@@ -51,7 +51,7 @@ export default function AboutPage() {
             <div>
               <span className="eyebrow block mb-2" style={{ fontSize: '12px' }}>The Founder</span>
               <h2 className="text-3xl font-medium tracking-tight mb-1" style={{ fontFamily: 'Georgia, serif' }}>{siteConfig.founder.name}</h2>
-              <p className="text-sm text-[#234b3a] font-semibold">{siteConfig.founder.role}</p>
+              <p className="text-sm text-[#1e3a8a] font-semibold">{siteConfig.founder.role}</p>
             </div>
             
             <p className="text-base text-[#6d6d68] leading-relaxed">
@@ -70,7 +70,7 @@ export default function AboutPage() {
                 className="btn btn-light flex items-center gap-2"
                 style={{ fontSize: '13px', padding: '10px 15px' }}
               >
-                <svg className="w-4 h-4 text-[#234b3a] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="w-4 h-4 text-[#1e3a8a] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                   <rect width="4" height="12" x="2" y="9" />
                   <circle cx="4" cy="4" r="2" />
@@ -96,8 +96,8 @@ export default function AboutPage() {
           {/* Graphic placeholder (Col-span 5) */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="bg-[#fffdf9] border border-[#deddd6] rounded-2xl p-8 max-w-[360px] w-full text-center relative overflow-hidden shadow-sm">
-              <div className="w-20 h-20 rounded-full bg-[#234b3a]/10 flex items-center justify-center mx-auto mb-6">
-                <Cpu className="w-10 h-10 text-[#234b3a]" />
+              <div className="w-20 h-20 rounded-full bg-[#1e3a8a]/10 flex items-center justify-center mx-auto mb-6">
+                <Cpu className="w-10 h-10 text-[#1e3a8a]" />
               </div>
               
               <h4 className="text-sm font-bold text-[#171717] uppercase tracking-wider mb-2">Technical Core Stack</h4>
@@ -125,9 +125,9 @@ export default function AboutPage() {
             {values.map((v) => (
               <div
                 key={v.title}
-                className="p-6 rounded-2xl bg-[#fffdf9] border border-[#deddd6] hover:border-[#234b3a] transition-all flex gap-4"
+                className="p-6 rounded-2xl bg-[#fffdf9] border border-[#deddd6] hover:border-[#1e3a8a] transition-all flex gap-4"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#234b3a]/10 flex items-center justify-center text-[#234b3a] shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#1e3a8a]/10 flex items-center justify-center text-[#1e3a8a] shrink-0">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div>

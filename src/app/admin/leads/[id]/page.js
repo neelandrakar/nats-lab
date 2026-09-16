@@ -200,17 +200,17 @@ export default function LeadDetailPage({ params }) {
                 <h4 className="text-xs font-bold uppercase tracking-wider text-[#6d6d68] mb-3">Lead Requirements</h4>
                 <div className="space-y-3">
                   <div className="flex gap-3 items-center text-xs">
-                    <Briefcase className="w-4 h-4 text-[#234b3a] shrink-0" />
+                    <Briefcase className="w-4 h-4 text-[#1e3a8a] shrink-0" />
                     <div>
                       <span className="block text-[#6d6d68]">Requested Service</span>
                       <span className="block text-sm font-bold text-[#171717]">{lead.service}</span>
                     </div>
                   </div>
                   <div className="flex gap-3 items-center text-xs border-t border-[#deddd6] pt-3">
-                    <Landmark className="w-4 h-4 text-[#234b3a] shrink-0" />
+                    <Landmark className="w-4 h-4 text-[#1e3a8a] shrink-0" />
                     <div>
                       <span className="block text-[#6d6d68]">Budget Range</span>
-                      <span className="block text-sm font-bold text-[#234b3a]">{lead.budget}</span>
+                      <span className="block text-sm font-bold text-[#1e3a8a]">{lead.budget}</span>
                     </div>
                   </div>
                 </div>
@@ -226,7 +226,7 @@ export default function LeadDetailPage({ params }) {
                   href={`mailto:${lead.email}`}
                   className="flex items-center gap-3 p-3 border border-[#deddd6] rounded-xl hover:bg-[#faf9f5] transition-colors text-xs"
                 >
-                  <Mail className="w-4 h-4 text-[#234b3a] shrink-0" />
+                  <Mail className="w-4 h-4 text-[#1e3a8a] shrink-0" />
                   <div>
                     <span className="block font-bold text-[#171717]">Send Email</span>
                     <span className="block text-[#6d6d68]">{lead.email}</span>
@@ -238,7 +238,7 @@ export default function LeadDetailPage({ params }) {
                     href={`tel:${lead.phone}`}
                     className="flex items-center gap-3 p-3 border border-[#deddd6] rounded-xl hover:bg-[#faf9f5] transition-colors text-xs"
                   >
-                    <Phone className="w-4 h-4 text-[#234b3a] shrink-0" />
+                    <Phone className="w-4 h-4 text-[#1e3a8a] shrink-0" />
                     <div>
                       <span className="block font-bold text-[#171717]">Call / WhatsApp</span>
                       <span className="block text-[#6d6d68]">{lead.phone}</span>

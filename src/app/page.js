@@ -388,7 +388,7 @@ export default function Home() {
                     <p className="text-xs text-[#6d6d68] leading-relaxed">Your enquiry message has been received. I&apos;ll get back to you soon.</p>
                     <button 
                       type="button"
-                      className="text-xs font-bold text-[#234b3a] hover:underline cursor-pointer"
+                      className="text-xs font-bold text-[#1e3a8a] hover:underline cursor-pointer"
                       onClick={() => setEnquirySuccess(false)}
                     >
                       Send another message

@@ -46,7 +46,7 @@ export default function ContactPage({ searchParams }) {
               <div className="space-y-4">
                 {/* Email */}
                 <div className="flex gap-3">
-                  <Mail className="w-5 h-5 text-[#234b3a] shrink-0 mt-0.5" />
+                  <Mail className="w-5 h-5 text-[#1e3a8a] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-xs font-bold text-[#171717] mb-0.5">Email Us</h4>
                     <a href={`mailto:${siteConfig.contact.email}`} className="text-sm text-[#6d6d68] hover:text-[#171717] transition-colors">
@@ -57,7 +57,7 @@ export default function ContactPage({ searchParams }) {
 
                 {/* Phone */}
                 <div className="flex gap-3">
-                  <Phone className="w-5 h-5 text-[#234b3a] shrink-0 mt-0.5" />
+                  <Phone className="w-5 h-5 text-[#1e3a8a] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-xs font-bold text-[#171717] mb-0.5">Call / WhatsApp</h4>
                     <a href={`tel:${siteConfig.contact.phone}`} className="text-sm text-[#6d6d68] hover:text-[#171717] transition-colors">
@@ -68,7 +68,7 @@ export default function ContactPage({ searchParams }) {
 
                 {/* Response time */}
                 <div className="flex gap-3">
-                  <Clock className="w-5 h-5 text-[#234b3a] shrink-0 mt-0.5" />
+                  <Clock className="w-5 h-5 text-[#1e3a8a] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-xs font-bold text-[#171717] mb-0.5">Studio Hours</h4>
                     <p className="text-sm text-[#6d6d68]">Monday — Friday, 9:00 AM — 6:00 PM IST</p>
@@ -79,7 +79,7 @@ export default function ContactPage({ searchParams }) {
 
             {/* Credential Callout */}
             <div className="p-6 rounded-2xl bg-[#fffdf9] border border-[#deddd6] space-y-4">
-              <div className="w-8 h-8 rounded-lg bg-[#234b3a]/10 flex items-center justify-center text-[#234b3a]">
+              <div className="w-8 h-8 rounded-lg bg-[#1e3a8a]/10 flex items-center justify-center text-[#1e3a8a]">
                 <MessageSquare className="w-4 h-4" />
               </div>
               <h4 className="text-sm font-bold text-[#171717]">No Sales Pitch. Direct Engineering.</h4>

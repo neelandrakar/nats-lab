@@ -125,7 +125,7 @@ export default function AdminLeadsPage() {
         <div className="bg-[#fffdf9] border border-[#deddd6] rounded-2xl shadow-sm overflow-hidden">
           <div className="p-5 bg-[#faf9f5] border-b border-[#deddd6] flex justify-between items-center flex-wrap gap-4">
             <h3 className="text-sm font-bold text-[#171717] flex items-center gap-2">
-              <Database className="w-4 h-4 text-[#234b3a]" /> Captured Project Enquiries ({leads.length})
+              <Database className="w-4 h-4 text-[#1e3a8a]" /> Captured Project Enquiries ({leads.length})
             </h3>
             <button
               onClick={fetchLeads}
@@ -173,7 +173,7 @@ export default function AdminLeadsPage() {
                       <td className="p-4 font-semibold text-[#171717]">{l.service}</td>
 
                       {/* Budget */}
-                      <td className="p-4 font-bold text-[#234b3a]">{l.budget}</td>
+                      <td className="p-4 font-bold text-[#1e3a8a]">{l.budget}</td>
 
                       {/* Status select dropdown */}
                       <td className="p-4">

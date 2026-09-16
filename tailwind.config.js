@@ -12,9 +12,9 @@ module.exports = {
           dark: "#f7f6f2",
           surface: "#fffdf9",
           card: "#fffdf9",
-          accent: "#234b3a",
-          teal: "#234b3a",
-          cyan: "#234b3a",
+          accent: "#1e3a8a",
+          teal: "#1e3a8a",
+          cyan: "#1e3a8a",
         }
       },
       backgroundImage: {

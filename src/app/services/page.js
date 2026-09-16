@@ -77,12 +77,12 @@ export default function ServicesPage() {
               <div
                 key={service.id}
                 id={service.id}
-                className="p-8 lg:p-12 rounded-3xl bg-[#fffdf9] border border-[#deddd6] hover:border-[#234b3a] transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 shadow-sm"
+                className="p-8 lg:p-12 rounded-3xl bg-[#fffdf9] border border-[#deddd6] hover:border-[#1e3a8a] transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 shadow-sm"
               >
                 {/* Column 1: Icon, Title & Basic Info (Col-span 5) */}
                 <div className="lg:col-span-5 flex flex-col justify-between">
                   <div className="flex flex-col gap-6">
-                    <div className="w-14 h-14 rounded-2xl bg-[#234b3a]/10 flex items-center justify-center text-[#234b3a]">
+                    <div className="w-14 h-14 rounded-2xl bg-[#1e3a8a]/10 flex items-center justify-center text-[#1e3a8a]">
                       <Icon className="w-7 h-7" />
                     </div>
                     <div>
@@ -93,7 +93,7 @@ export default function ServicesPage() {
 
                   <div className="mt-8">
                     <span className="text-[10px] font-bold text-[#6d6d68] uppercase tracking-widest block mb-2">Technologies</span>
-                    <p className="text-xs font-mono text-[#234b3a] font-bold">{details.techUsed}</p>
+                    <p className="text-xs font-mono text-[#1e3a8a] font-bold">{details.techUsed}</p>
                   </div>
                 </div>
 
@@ -104,7 +104,7 @@ export default function ServicesPage() {
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                       {details.deliverables.map((item) => (
                         <li key={item} className="flex items-start gap-2.5 text-xs text-[#171717]">
-                          <CheckCircle2 className="w-4 h-4 text-[#234b3a] shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </li>
                       ))}

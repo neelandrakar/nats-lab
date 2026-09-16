@@ -23,7 +23,7 @@ export default function WorkGrid({ initialProjects = [] }) {
             onClick={() => setActiveCategory(cat)}
             className={`text-xs sm:text-sm font-bold px-4 py-2 rounded-lg border transition-all duration-200 ${
               activeCategory === cat
-                ? "bg-[#234b3a] border-[#234b3a] text-white"
+                ? "bg-[#1e3a8a] border-[#1e3a8a] text-white"
                 : "bg-transparent border-[#deddd6] text-[#6d6d68] hover:text-[#171717] hover:bg-[#fffdf9]"
             }`}
           >
@@ -42,7 +42,7 @@ export default function WorkGrid({ initialProjects = [] }) {
           {filteredProjects.map((project) => (
             <div
               key={project.slug}
-              className="bg-[#fffdf9] border border-[#deddd6] hover:border-[#234b3a] rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-sm"
+              className="bg-[#fffdf9] border border-[#deddd6] hover:border-[#1e3a8a] rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-sm"
             >
               {/* Image Header */}
               <div className="relative h-48 overflow-hidden bg-[#f7f6f2]">
@@ -52,7 +52,7 @@ export default function WorkGrid({ initialProjects = [] }) {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="text-[10px] font-bold px-2.5 py-1 bg-[#fffdf9] border border-[#deddd6] rounded-full text-[#234b3a] uppercase tracking-wider">
+                  <span className="text-[10px] font-bold px-2.5 py-1 bg-[#fffdf9] border border-[#deddd6] rounded-full text-[#1e3a8a] uppercase tracking-wider">
                     {project.category}
                   </span>
                 </div>
@@ -61,7 +61,7 @@ export default function WorkGrid({ initialProjects = [] }) {
               {/* Body */}
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-xl font-medium text-[#171717] mb-3 group-hover:text-[#234b3a] transition-colors" style={{ fontFamily: 'Georgia, serif' }}>
+                  <h3 className="text-xl font-medium text-[#171717] mb-3 group-hover:text-[#1e3a8a] transition-colors" style={{ fontFamily: 'Georgia, serif' }}>
                     {project.title}
                   </h3>
                   <p className="text-xs text-[#6d6d68] leading-relaxed mb-4 line-clamp-2">
@@ -88,7 +88,7 @@ export default function WorkGrid({ initialProjects = [] }) {
                   </span>
                   <Link
                     href={`/work/${project.slug}`}
-                    className="text-xs font-bold text-[#234b3a] flex items-center gap-1.5 transition-colors"
+                    className="text-xs font-bold text-[#1e3a8a] flex items-center gap-1.5 transition-colors"
                   >
                     View Details
                     <ArrowRight className="w-3.5 h-3.5 transition-transform" />

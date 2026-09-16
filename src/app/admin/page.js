@@ -32,7 +32,7 @@ export default async function AdminDashboard() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-[#deddd6] pb-6 mb-8 gap-6">
           <div>
-            <span className="text-xs font-bold text-[#234b3a] uppercase tracking-widest">
+            <span className="text-xs font-bold text-[#1e3a8a] uppercase tracking-widest">
               Admin Console
             </span>
             <h1 className="text-3xl font-medium tracking-tight mt-1" style={{ fontFamily: "Georgia, serif" }}>
@@ -53,7 +53,7 @@ export default async function AdminDashboard() {
         {/* Metrics Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {[
-            { label: "Total Leads", count: totalLeads, color: "text-[#234b3a]", icon: FileText },
+            { label: "Total Leads", count: totalLeads, color: "text-[#1e3a8a]", icon: FileText },
             { label: "New Leads", count: newLeads, color: "text-cyan-700", icon: Clock },
             { label: "Contacted", count: contactedLeads, color: "text-blue-700", icon: Users },
             { label: "Won Deals", count: wonLeads, color: "text-emerald-700", icon: CheckCircle }

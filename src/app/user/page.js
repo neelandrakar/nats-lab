@@ -52,7 +52,7 @@ export default async function UserDashboard() {
         {/* Header / Profile Row */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-[#deddd6] pb-6 mb-8 gap-6">
           <div>
-            <span className="text-xs font-bold text-[#234b3a] uppercase tracking-widest">
+            <span className="text-xs font-bold text-[#1e3a8a] uppercase tracking-widest">
               User Dashboard
             </span>
             <h1 className="text-3xl font-medium tracking-tight mt-1" style={{ fontFamily: "Georgia, serif" }}>
@@ -74,7 +74,7 @@ export default async function UserDashboard() {
         <div className="bg-[#fffdf9] border border-[#deddd6] rounded-2xl shadow-sm overflow-hidden">
           <div className="p-5 bg-[#faf9f5] border-b border-[#deddd6] flex justify-between items-center flex-wrap gap-4">
             <h3 className="text-sm font-bold text-[#171717] flex items-center gap-2">
-              <Database className="w-4 h-4 text-[#234b3a]" /> My Project Enquiries ({leads.length})
+              <Database className="w-4 h-4 text-[#1e3a8a]" /> My Project Enquiries ({leads.length})
             </h3>
             <Link href="/#contact" className="btn btn-dark py-2 px-3 text-xs flex items-center gap-1.5">
               <Plus className="w-3.5 h-3.5" /> Start a Project
@@ -106,7 +106,7 @@ export default async function UserDashboard() {
                   {leads.map((lead) => (
                     <tr key={lead._id.toString()} className="hover:bg-[#faf9f5] transition-colors">
                       <td className="p-4 font-bold text-[#171717]">{lead.service}</td>
-                      <td className="p-4 font-semibold text-[#234b3a]">{lead.budget}</td>
+                      <td className="p-4 font-semibold text-[#1e3a8a]">{lead.budget}</td>
                       <td className="p-4 max-w-[300px] truncate text-[#6d6d68] italic">
                         {lead.message || "(No description provided)"}
                       </td>

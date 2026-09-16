@@ -66,7 +66,7 @@ export default async function ProjectDetailPage({ params }) {
 
         {/* Project Header */}
         <div className="mb-10">
-          <span className="text-xs font-bold text-[#234b3a] bg-[#234b3a]/10 border border-[#234b3a]/20 px-2.5 py-1 rounded w-fit">
+          <span className="text-xs font-bold text-[#1e3a8a] bg-[#1e3a8a]/10 border border-[#1e3a8a]/20 px-2.5 py-1 rounded w-fit">
             {project.category}
           </span>
           <h1 className="text-3xl sm:text-5xl font-medium tracking-tight mt-4 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
@@ -107,7 +107,7 @@ export default async function ProjectDetailPage({ params }) {
                 </p>
               </div>
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-wider text-[#234b3a] mb-2">Our Solution</h3>
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#1e3a8a] mb-2">Our Solution</h3>
                 <p className="text-xs text-[#6d6d68] leading-relaxed">
                   We built a bespoke Next.js and MongoDB-backed system, automating data synchronization, calculating instant validation scores, and wiring SMS/WhatsApp integrations to alert staff in real time.
                 </p>
@@ -137,7 +137,7 @@ export default async function ProjectDetailPage({ params }) {
               <ul className="space-y-2">
                 {project.services.map((srv) => (
                   <li key={srv} className="flex items-center gap-2 text-xs text-[#171717]">
-                    <CheckCircle2 className="w-4 h-4 text-[#234b3a] shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#1e3a8a] shrink-0" />
                     <span>{srv}</span>
                   </li>
                 ))}
@@ -151,7 +151,7 @@ export default async function ProjectDetailPage({ params }) {
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="text-[10px] font-mono text-[#234b3a] bg-[#234b3a]/10 border border-[#234b3a]/20 px-2.5 py-1 rounded font-bold"
+                    className="text-[10px] font-mono text-[#1e3a8a] bg-[#1e3a8a]/10 border border-[#1e3a8a]/20 px-2.5 py-1 rounded font-bold"
                   >
                     {tech}
                   </span>
@@ -162,7 +162,7 @@ export default async function ProjectDetailPage({ params }) {
             {/* Outcome Callout */}
             <div className="p-4 rounded-xl bg-[#fffdf9] border border-[#deddd6]">
               <h3 className="text-xs font-bold text-[#171717] mb-2 flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-[#234b3a]" /> Verified Outcome
+                <ShieldCheck className="w-4 h-4 text-[#1e3a8a]" /> Verified Outcome
               </h3>
               <p className="text-[11px] text-[#6d6d68] leading-relaxed font-mono">
                 System fully tested in sandbox environments. Leads correctly save to MongoDB, validation logic score succeeds, and API notifies dispatch receivers.

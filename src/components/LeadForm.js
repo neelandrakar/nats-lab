@@ -103,7 +103,7 @@ export default function LeadForm({ defaultService = "", defaultIndustry = "" }) 
         </div>
         <button
           onClick={() => setIsSuccess(false)}
-          className="text-xs font-semibold text-[#234b3a] hover:underline"
+          className="text-xs font-semibold text-[#1e3a8a] hover:underline"
         >
           Submit another request
         </button>
