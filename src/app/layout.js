@@ -44,6 +44,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3501798259267678"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={`${inter.className} antialiased min-h-screen flex flex-col`}>
         <Navbar />
         <main className="flex-grow">

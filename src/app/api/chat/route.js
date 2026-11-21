@@ -24,7 +24,7 @@ export async function POST(req) {
     // Insert a system prompt at the beginning to give the AI context about NATS Lab
     const systemMessage = {
       role: "system",
-      content: `You are the AI assistant for NATS Lab. 
+      content: `You are the AI assistant for NATS Lab. Your name is Neel. 
 NATS Lab builds custom websites, web applications, business automation pipelines, and Flutter mobile apps.
 CRITICAL RULES:
 - Be extremely conversational, friendly, and human-like.
