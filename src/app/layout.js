@@ -22,6 +22,14 @@ export const metadata = {
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.companyName,
+    images: [
+      {
+        url: '/logo.png',
+        width: 755,
+        height: 382,
+        alt: siteConfig.companyName,
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -29,15 +37,19 @@ export const metadata = {
     card: "summary_large_image",
     title: `${siteConfig.companyName} | Premium Software & AI Automation Studio`,
     description: siteConfig.description,
+    images: ['/logo.png'],
   },
   robots: {
     index: true,
     follow: true,
   },
   icons: {
-    icon: '/natslab_tab.png',
+    icon: [
+      { url: '/natslab_tab.png' },
+      { url: '/logo-mark.png' },
+    ],
     shortcut: '/natslab_tab.png',
-    apple: '/natslab_tab.png',
+    apple: '/apple-icon.png',
   }
 };
 

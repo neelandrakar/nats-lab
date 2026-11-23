@@ -4,6 +4,9 @@ export const siteConfig = {
   supportingMessage: "We build digital systems that help businesses capture more leads, automate repetitive work and operate more efficiently.",
   description: "NATS Lab is a premium software and AI automation studio. We build high-end websites, custom software, and AI-powered automation to solve critical business problems.",
   url: "https://natslab.com",
+  logo: "/logo.png",
+  logoHorizontal: "/logo-horizontal.png",
+  logoMark: "/logo-mark.png",
 
   founder: {
     name: "Neelandra Kar",

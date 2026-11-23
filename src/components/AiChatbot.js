@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { MessageSquare, X, Send, Bot, Sparkles, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AiChatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -99,8 +100,8 @@ export default function AiChatbot() {
           {/* Header */}
           <div className="p-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                <Bot className="w-4 h-4 text-white" />
+              <div className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center p-1 overflow-hidden shadow-sm">
+                <Image src="/logo-mark.png" alt="Nats LAB" width={24} height={24} className="w-6 h-6 object-contain" />
               </div>
               <div>
                 <h4 className="text-sm font-semibold text-white flex items-center gap-1.5">
@@ -127,8 +128,8 @@ export default function AiChatbot() {
                   }`}
               >
                 {msg.role === "assistant" && (
-                  <div className="w-7 h-7 rounded-full bg-brand-accent/20 border border-brand-accent/30 flex items-center justify-center shrink-0">
-                    <Bot className="w-3.5 h-3.5 text-brand-accent" />
+                  <div className="w-7 h-7 rounded-full bg-white border border-brand-accent/20 flex items-center justify-center shrink-0 p-1 overflow-hidden shadow-sm">
+                    <Image src="/logo-mark.png" alt="Nats LAB" width={20} height={20} className="w-5 h-5 object-contain" />
                   </div>
                 )}
                 <div>

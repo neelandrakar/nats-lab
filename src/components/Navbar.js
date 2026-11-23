@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
@@ -47,8 +48,15 @@ export default function Navbar() {
   return (
     <nav>
       <div className="container nav-inner">
-        <Link href="/" className="logo">
-          NATS<span>Lab</span>
+        <Link href="/" className="flex items-center gap-2 group" aria-label="Nats LAB Home">
+          <Image
+            src="/logo-horizontal.png"
+            alt="Nats LAB"
+            width={180}
+            height={36}
+            className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+            priority
+          />
         </Link>
         
         {/* Desktop Links - hidden automatically at 850px by style.css */}
